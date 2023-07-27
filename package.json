@@ -7,7 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@emotion/cache": "latest",
@@ -16,6 +23,7 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "next": "13.x",
+    "next-themes": "^0.2.1",
     "react": "18.x",
     "react-dom": "18.x"
   },
@@ -25,6 +33,9 @@
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
+    "next-sitemap": "^4.1.8",
     "typescript": "latest"
   }
 }
